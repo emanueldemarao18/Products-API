@@ -1,5 +1,6 @@
 package com.emanuel.products.dto;
 
+import com.emanuel.products.entities.Category;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -24,5 +25,11 @@ public class CategoryDTO implements Serializable {
     public CategoryDTO(Long id, String name) {
         this.id = id;
         this.name = name;
+    }
+
+    public CategoryDTO(Category entity) {
+        this.id = entity.getId();
+
+        this.name = entity.getName();
     }
 }

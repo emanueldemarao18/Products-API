@@ -1,6 +1,8 @@
 package com.emanuel.products.entities;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -15,7 +17,13 @@ public class Category implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    @Getter
+    @Setter
     private Long id;
+
+    @Getter
+    @Setter
     private String name;
 
     public Category(Long id, String name) {
@@ -27,21 +35,6 @@ public class Category implements Serializable {
 
     }
 
-    public Long getId() {
-        return this.id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return this.name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     @Override
     public boolean equals(Object o) {
