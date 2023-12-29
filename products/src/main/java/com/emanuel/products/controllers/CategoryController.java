@@ -1,5 +1,6 @@
 package com.emanuel.products.controllers;
 
+import com.emanuel.products.dto.CategoryDTO;
 import com.emanuel.products.entities.Category;
 import com.emanuel.products.services.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +21,8 @@ public class CategoryController {
 
     @GetMapping
 
-    public ResponseEntity<List<Category>> findAll() {
-        List<Category> list = service.findAll();
+    public ResponseEntity<List<CategoryDTO>> findAll() {
+        List<CategoryDTO> list = service.findAll();
         return ResponseEntity.ok().body(list);
 
     }
