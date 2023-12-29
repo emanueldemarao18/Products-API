@@ -2,13 +2,12 @@ package com.emanuel.products.services;
 
 import com.emanuel.products.entities.Category;
 import com.emanuel.products.repositories.CategoryRepository;
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
 import java.util.List;
+
 
 @Service
 public class CategoryService {
@@ -17,6 +16,7 @@ public class CategoryService {
 
     private CategoryRepository repository;
 
+    @Transactional(readOnly = true)
     public List<Category> findAll() {
         return repository.findAll();
     }
