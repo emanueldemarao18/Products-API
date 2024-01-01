@@ -4,12 +4,14 @@ import com.emanuel.products.entities.Category;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 
 public class CategoryDTO implements Serializable {
 
-    private static final long seriaVersionUID = 1L;
+    @Serial
+    private static final long serialVersionUID = 1L;
     @Getter
     @Setter
     private Long id;
